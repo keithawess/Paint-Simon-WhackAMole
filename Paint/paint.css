@@ -1,0 +1,57 @@
+.flex{
+    display: flex;
+}
+
+main{
+    margin: auto;
+    height: 450px;
+    width: 95%;
+}
+
+canvas{
+    flex-basis: calc(100% / 5 * 4 - 10px);
+    margin-right: 10px;
+    border: 2px solid black;
+}
+
+aside{
+    flex-basis: calc(100% / 5 - 10px);
+    display: flex;
+    flex-direction: column;
+    border: 2px solid black;
+}
+
+.addedColor{
+    margin: 5px;
+    border-radius: 50%;
+    height: 25px;
+}
+
+.selected{
+    border: 2px solid white;
+}
+
+.containerBorder{
+    border: red 2px solid;
+}
+
+.border{
+    border: 2px solid black;
+}
+
+.csContainer{
+    margin: auto;
+    height: 200px;
+    width: 400px;
+}
+
+.colorSelector{
+    height: 145px;
+}
+
+.colorButton{
+    display: block;
+    margin: auto;
+    width: 400px;
+    height: 50px;
+}
