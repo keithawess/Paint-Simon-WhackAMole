@@ -7,14 +7,28 @@
     <title>Document</title>
     <link rel="stylesheet" href="paint.css">
 </head>
-<body>
-    <main class= 'flex containerBorder'>
+<body class= "bg-grey">
+    <main class= 'flex'>
         <canvas></canvas>
-        <aside></aside>
+        <aside>
+            <button class="addedColor bg-red selected"></button>
+            <button class="addedColor bg-blue"></button>
+            <button class="addedColor bg-yellow"></button>
+
+        </aside>
     </main>
 
-    <div class= "csContainer containerBorder">
-        <div class= "border colorSelector"></div>
+    <div class= "csContainer">
+        <div class= "border colorSelector flex">
+            <div class= "cvContainer flex">
+                <div class="colorViewer" id="colorViewer"></div>
+            </div>
+            <div class= "flex rangeContainer">
+                <input type="range" min="0" max="255" value="127" class="slider" id="redSlider">
+                <input type="range" min="0" max="255" value="127" class="slider" id="blueSlider">
+                <input type="range" min="0" max="255" value="127" class="slider" id="greenSlider">
+            </div>
+        </div>
         <button class= "colorButton">Add Color</button>
     </div>
 </body>
