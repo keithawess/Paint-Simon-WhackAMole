@@ -5,7 +5,8 @@
 main{
     margin: auto auto 10px auto;
     height: 375px;
-    width: 800px;
+    width: 100%;
+    min-width: 850px;
 }
 
 canvas{
@@ -18,13 +19,14 @@ canvas{
 aside{
     flex-basis: calc(100% / 5 - 10px);
     display: flex;
-    flex-flow: row wrap;
+    flex-flow: column wrap;
     border: 2px solid black;
-    justify-content: center;
+    justify-content: space-evenly;
 }
 
 .addedColor{
-    margin: 5px;
+    margin-left: auto;
+    margin-right: auto;
     border-radius: 50%;
     border: 2px solid black;
     flex-basis: calc(100% / 5 * 4);
