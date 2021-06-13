@@ -1,16 +1,23 @@
-let colorViewer = document.getElementById('colorViewer');
-let redSlider = document.getElementById('redSlider');
-let blueSlider = document.getElementById('blueSlider');
-let greenSlider = document.getElementById('greenSlider');
-let addColorButton = document.getElementById('colorButton');
-let colorBox = document.getElementById('colorBox');
+const colorViewer = document.getElementById('colorViewer');
+const redSlider = document.getElementById('redSlider');
+const blueSlider = document.getElementById('blueSlider');
+const greenSlider = document.getElementById('greenSlider');
+const addColorButton = document.getElementById('colorButton');
+const colorBox = document.getElementById('colorBox');
+const drawingPad = document.getElementById('drawingPad');
+const ctx = drawingPad.getContext('2d');
 let red = redSlider.value;
 let blue = blueSlider.value;
 let green = greenSlider.value;
 let selectedColor = "rgb(255,0,0)";
 let numColors = 3;
+let isDrawing = false;
+let x = 0;
+let y = 0;
 
 addColorEvents();
+
+//Event Listeners
 
 redSlider.addEventListener("mousedown", (e) => {
     redSlider.addEventListener("mousemove", (e) => {
@@ -37,6 +44,35 @@ addColorButton.addEventListener("click", (e) => {
     addColor();
 })
 
+drawingPad.addEventListener('mousedown', (e) => {
+    x = e.offsetX;
+    y = e.offsetY;
+    isDrawing = true;
+})
+
+drawingPad.addEventListener('mousemove', (e) => {
+    if (isDrawing == true) {
+        drawLine(ctx, x, y, e.offsetX, e.offsetY);
+        x = e.offsetX;
+        y = e.offsetY;
+    }
+})
+
+drawingPad.addEventListener("mouseleave", (e) => {
+    isDrawing = false;
+})
+
+window.addEventListener('mouseup', (e) => {
+    if (isDrawing === true) {
+        drawLine(ctx, x, y, e.offsetX, e.offsetY);
+        x = 0;
+        y = 0;
+        isDrawing = false;
+    }
+})
+
+//Functions
+
 function addColorEvents(){
     let colors = document.getElementsByClassName('addedColor');
     for (i = 0; i < colors.length; i++)
@@ -61,4 +97,14 @@ function addColor(){
         addColorEvents();
         numColors++;
     }
+}
+
+function drawLine(context, x1, y1, x2, y2) {
+    context.beginPath();
+    context.strokeStyle = selectedColor;
+    context.lineWidth = 2;
+    context.moveTo(x1,y1);
+    context.lineTo(x2,y2);
+    context.stroke();
+    context.closePath();
 }
