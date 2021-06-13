@@ -10,7 +10,7 @@
 <body class= "bg-grey">
     <main class= 'flex'>
         <canvas></canvas>
-        <aside>
+        <aside id= "colorBox">
             <button class="addedColor bg-red selected"></button>
             <button class="addedColor bg-blue"></button>
             <button class="addedColor bg-yellow"></button>
@@ -24,12 +24,14 @@
                 <div class="colorViewer" id="colorViewer"></div>
             </div>
             <div class= "flex rangeContainer">
-                <input type="range" min="0" max="255" value="127" class="slider" id="redSlider">
-                <input type="range" min="0" max="255" value="127" class="slider" id="blueSlider">
-                <input type="range" min="0" max="255" value="127" class="slider" id="greenSlider">
+                <input type="range" min="0" max="255" value="255" class="slider" id="redSlider">
+                <input type="range" min="0" max="255" value="0" class="slider" id="greenSlider">
+                <input type="range" min="0" max="255" value="0" class="slider" id="blueSlider">
             </div>
         </div>
-        <button class= "colorButton">Add Color</button>
+        <button class= "colorButton" id="colorButton">Add Color</button>
     </div>
+
+    <script src="paint.js"></script>
 </body>
 </html>
