@@ -1,0 +1,63 @@
+.green-button{
+    background-color: rgba(0, 190, 16, 0.5);
+    width: 50%;
+    height: 50%;
+
+}
+    
+.red-button{
+    background-color: rgba(255, 0, 0, .5);
+    width: 50%;
+    height: 50%;
+}
+
+.blue-button{
+    background-color: rgba(0, 0, 255, .5);
+    width: 50%;
+    height: 50%;
+}
+
+.yellow-button{
+    background-color: rgba(255, 255, 0, .5);
+    width: 50%;
+    height: 50%;
+}
+
+.border{
+    border: 2px black solid;
+}
+
+.game-board{
+    display: flex;
+    flex-flow: wrap;
+    justify-content: center;
+    width: 575px;
+    height: 575px;
+    border-radius: 50%;
+    overflow: hidden;
+}
+
+.center{
+    display: flex;
+    margin: 200px;
+    width: 175px;
+    height: 175px;
+    color: white;
+    flex-direction: column;
+    justify-content: space-evenly;
+    background-color: black;
+    border-radius: 50%;
+    position: fixed;
+    z-index: 1;
+}
+
+.text{
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.white-border{
+    border: 2px white solid;
+    padding-left: 2px;
+    padding-right: 2px;
+}
