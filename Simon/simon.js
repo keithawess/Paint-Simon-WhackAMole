@@ -97,7 +97,7 @@ function playPattern(i) {
                 greenButton.style.backgroundColor = "rgba(0,190,16,1)";
                 setTimeout(() => {
                     greenButton.style.backgroundColor = "rgba(0,190,16,.5)";
-                    playPattern(++i);
+                    addPause(++i);
                 }, 1000)
                 break;
     
@@ -105,7 +105,7 @@ function playPattern(i) {
                 redButton.style.backgroundColor = "rgba(255, 0, 0, 1)";
                 setTimeout(() => {
                     redButton.style.backgroundColor = "rgba(255, 0, 0, .5)";
-                    playPattern(++i);
+                    addPause(++i);
                 }, 1000)
                 break;
     
@@ -113,7 +113,7 @@ function playPattern(i) {
                 blueButton.style.backgroundColor = "rgba(0, 0, 255, 1)";
                 setTimeout(() => {
                     blueButton.style.backgroundColor = "rgba(0, 0, 255, .5)";
-                    playPattern(++i);
+                    addPause(++i);
                 }, 1000)
                 break;
     
@@ -121,13 +121,20 @@ function playPattern(i) {
                 yellowButton.style.backgroundColor = "rgba(255, 255, 0, 1)";
                 setTimeout(() => {
                     yellowButton.style.backgroundColor = "rgba(255, 255, 0, .5)";
-                    playPattern(++i);
+                    addPause(++i);
                 }, 1000)
                 break;
         }
     } else {
         userInput();
     }
+}
+
+function addPause(i)
+{
+    setTimeout(() => {
+        playPattern(i);
+    }, 200)
 }
 
 function checkTurn() {
