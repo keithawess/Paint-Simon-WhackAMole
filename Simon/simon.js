@@ -14,6 +14,10 @@ let userTurn = false;
 greenButton.addEventListener ("click", (e) => {
     if (userTurn === true)
     {
+        greenButton.style.backgroundColor = "rgba(0,190,16,1)";
+        setTimeout(() => {
+            greenButton.style.backgroundColor = "rgba(0,190,16,.5)";
+        }, 300)
         userInputList.push(green);
     }
 })
@@ -21,6 +25,10 @@ greenButton.addEventListener ("click", (e) => {
 redButton.addEventListener ("click", (e) => {
     if (userTurn === true)
     {
+        redButton.style.backgroundColor = "rgba(255, 0, 0, 1)";
+        setTimeout(() => {
+            redButton.style.backgroundColor = "rgba(255, 0, 0, .5)";
+        }, 300)
         userInputList.push(red);
     }
 })
@@ -28,6 +36,10 @@ redButton.addEventListener ("click", (e) => {
 blueButton.addEventListener ("click", (e) => {
     if (userTurn === true)
     {
+        blueButton.style.backgroundColor = "rgba(0, 0, 255, 1)";
+        setTimeout(() => {
+            blueButton.style.backgroundColor = "rgba(0, 0, 255, .5)";
+        }, 300)
         userInputList.push(blue);
     }
 })
@@ -35,6 +47,10 @@ blueButton.addEventListener ("click", (e) => {
 yellowButton.addEventListener ("click", (e) => {
     if (userTurn === true)
     {
+        yellowButton.style.backgroundColor = "rgba(255, 255, 0, 1)";
+        setTimeout(() => {
+            yellowButton.style.backgroundColor = "rgba(255, 255, 0, .5)";
+        }, 300)
         userInputList.push(yellow);
     }
 })
@@ -49,6 +65,7 @@ function userInput() {
         userTurn = false;
         if (checkTurn())
         {
+            score.innerText++;
             addStep();
             playPattern(0);
         } else {
@@ -105,4 +122,8 @@ function checkTurn() {
         success = false;   
     }
     return success;
+}
+
+function gameOver() {
+    
 }
