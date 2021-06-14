@@ -8,6 +8,7 @@ const drawingPad = document.getElementById("drawingPad");
 const ctx = drawingPad.getContext("2d");
 const clearButton = document.getElementById("clear");
 const emptyPalette = document.getElementById("emptyPalette");
+const lineRange = document.getElementById('lineRange');
 let red = redSlider.value;
 let blue = blueSlider.value;
 let green = greenSlider.value;
@@ -16,6 +17,7 @@ let numColors = 3;
 let isDrawing = false;
 let x = 0;
 let y = 0;
+let lWidth = 1;
 
 addColorEvents();
 
@@ -52,6 +54,10 @@ emptyPalette.addEventListener("click", (e) => {
     {
         list[i].remove();
     }
+})
+
+lineRange.addEventListener("mousemove", (e) => {
+    lWidth = lineRange.value;
 })
 
 clearButton.addEventListener("click", (e) => {
@@ -114,7 +120,9 @@ function addColor() {
 function drawLine(context, x1, y1, x2, y2) {
     context.beginPath();
     context.strokeStyle = selectedColor;
-    context.lineWidth = 2;
+    context.lineWidth = lWidth;
+    context.lineCap = "round";
+    context.lineJoin = "bevel"
     context.moveTo(x1, y1);
     context.lineTo(x2, y2);
     context.stroke();

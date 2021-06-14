@@ -55,6 +55,10 @@ aside{
     margin-left: 5px;
 }
 
+.flex-col{
+    flex-direction: column;
+}
+
 .border{
     border: 2px solid black;
 }
