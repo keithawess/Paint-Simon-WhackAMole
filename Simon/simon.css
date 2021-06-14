@@ -27,6 +27,8 @@
 }
 
 .game-board{
+    margin-left: auto;
+    margin-right: auto;
     display: flex;
     flex-flow: wrap;
     justify-content: center;
