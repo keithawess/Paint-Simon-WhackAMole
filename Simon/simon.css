@@ -60,3 +60,13 @@
     padding-left: 2px;
     padding-right: 2px;
 }
+
+.start{
+    border:2px white solid;
+    color: white;
+    background-color: black;
+}
+
+.start:hover{
+    background-color: rgb(61, 61, 61);
+}

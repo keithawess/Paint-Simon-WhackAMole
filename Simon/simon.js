@@ -3,6 +3,8 @@ const redButton = document.getElementById('redButton');
 const blueButton = document.getElementById('blueButton');
 const yellowButton = document.getElementById('yellowButton');
 const score = document.getElementById('score');
+const title = document.getElementById('title');
+const start = document.getElementById('start');
 const green = 0;
 const red = 1;
 const blue = 2;
@@ -10,6 +12,18 @@ const yellow = 3;
 let pattern = [];
 let userInputList = [];
 let userTurn = false;
+let gameRunning = false;
+
+
+start.addEventListener("click", (e) => {
+    if (gameRunning === false)
+    {
+        score.innerText = "0";
+        gameRunning = true;
+        addStep();
+        playPattern(0);
+    }
+})
 
 greenButton.addEventListener ("click", (e) => {
     if (userTurn === true)
@@ -66,6 +80,7 @@ function userInput() {
         if (checkTurn())
         {
             score.innerText++;
+            userInputList = [];
             addStep();
             playPattern(0);
         } else {
@@ -125,5 +140,10 @@ function checkTurn() {
 }
 
 function gameOver() {
-    
+    let temp = document.querySelectorAll('button');
+    temp.forEach(val => {
+        val.style.backgroundColor = "black";
+    });
+    title.innerText = "Game Over";
+    gameRunning = false;
 }
